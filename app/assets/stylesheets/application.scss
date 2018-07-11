@@ -1,0 +1,154 @@
+@import "bootstrap";
+
+
+/*Home page*/
+
+.picture {
+	margin-top: 20px;
+	text-align: center;
+	padding: 40px;
+	background: url(/assets/Design.jpg) no-repeat;
+	height: 480px;
+	background-position: center;
+	background-size: cover;
+}
+
+.home {
+	border-radius: 20px;
+	padding: 40px;
+	background-color: rgba(255, 255, 255, 0.75);
+	max-width: 800px;
+	margin: 0 auto;
+
+}
+
+h1, h2 {
+	font-family: Georgia;
+}
+
+
+.card-img-top {
+	height: 250px;
+	width: 100%;
+
+}
+
+.albums {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.link-to-photos {
+	color: #59698d;
+}
+
+.fa-facebook {
+	color: #3B5998;
+}
+
+.fa-twitter {
+	color: #00C6FF;
+}
+
+.fa-google-plus {
+	color: #dd4b39;
+}
+
+.fa-linkedin {
+	color: #0077B5;
+}
+
+/*flash*/
+
+.alert-error {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: center;
+}
+
+.alert-alert {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: center;
+}
+
+.alert-success {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: center;
+}
+
+.alert-notice {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: center;
+}
+
+/*Contacts page*/
+
+.contacts {
+    background-color: #cfd8dc;
+    height: 480px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.profile-picture {
+    margin-top: -10%;
+}
+
+.profile-picture img {
+    width: 200px;
+}
+
+.about-me-info {
+    margin-top: -10px;
+    text-align: center;
+    font-family: Georgia;
+}
+
+.contact-form {
+	padding: 10px;
+	border-radius: 4px;
+	background-color: #dddddd;
+}
+
+.contact-form-send {
+	text-align: center;
+}
+
+.shadow {
+	position: relative;
+}
+
+.shadow:before, .shadow:after {
+	position: absolute;
+	z-index: -1;
+	content: "";
+	bottom: 25px;
+	left: 10px;
+	width: 50%;
+	top: 80%;
+	-webkit-box-shadow: 0 35px 20px #989898;
+	-moz-box-shadow: 0 35px 20px #989898;
+	box-shadow: 0 35px 20px #989898  ;
+	-webkit-transform: rotate(-10deg);
+	-moz-transform: rotate(-10deg);
+	-o-transform: rotate(-10deg);
+	-ms-transform: rotate(-10deg);
+	transform: rotate(-10deg);
+}
+
+.shadow:after {
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  transform: rotate(10deg);
+  right: 10px;
+  left: auto;
+}

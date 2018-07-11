@@ -1,0 +1,25 @@
+<div class="jumbotron contacts">
+  <div class="about-me float-left col-md-5">
+    <div class="profile-picture float-left">
+      <img src="/assets/Gerda.jpeg" class="rounded-circle">
+    </div>
+      <p class="about-me-info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+      survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+      </p>
+  </div>
+
+  
+  <div class="contact-form shadow float-right col-md-5"">
+    <h5>Jūsų žinutė</h5>
+      <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+      <%= f.input :vardas %>
+      <%= f.input :el_paštas %>
+      <%= f.input :telefonas %>
+      <%= f.input :žinutė, :as => :text %>
+    <div class="contact-form-send">
+    </br>
+      <%= f.button :submit, 'Siųsti', :class=> "btn btn-info btn-lg" %>
+    </div>
+    <% end %>
+  </div>
+</div>
