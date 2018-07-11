@@ -1,0 +1,9 @@
+<div class="row album-form">
+	<div class="col-md-8 offset-md-2">
+		<%= simple_form_for @album, :html => { :multipart => true } do |f| %>
+			<%= f.input :title, label: "Title" %>
+			<%= f.input :body %>
+			<%= f.button :submit, class: "btn btn-info" %>
+		<% end %>
+	</div>
+</div>

@@ -8,7 +8,7 @@ class Contact < MailForm::Base
 		{
 			:subject => "Message from Contact form",
 			:to => "mediusgroupproject@gmail.com",
-			:from => %("#{name}" <#{email}>)
+			:from => %("#{vardas}" <#{el_paštas}>)
 		}
 	end
 end
