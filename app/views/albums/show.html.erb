@@ -1,0 +1,20 @@
+
+<%= @album.title %>
+<%= @album.body %>
+
+
+	<!-- app/views/posts/show.html.erb -->
+<% if @album.images.attached? %>
+<p>
+  <strong>Images:</strong>
+  <br>
+  <% @album.images.each do |image| %>
+    <%= image_tag image.variant(resize: "300x300") %>
+  <% end %>
+</p>
+<% end %>
+
+
+
+
+

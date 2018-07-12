@@ -50,7 +50,7 @@ class AlbumsController < ApplicationController
 
 	private
 	def valid_params
-		params.require(:album).permit(:title, :body)
+		params.require(:album).permit(:title, :body, images: [])
 	end
 
 	def require_login

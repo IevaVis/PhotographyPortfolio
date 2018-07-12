@@ -30,8 +30,11 @@ gem 'figaro'
 gem 'mail_form'
 gem 'simple_form'
 
-
+#admin login
 gem 'devise', '~> 4.4', '>= 4.4.3'
+
+#images
+gem "mini_magick"
 
 
 # Reduces boot times through caching; required in config/boot.rb

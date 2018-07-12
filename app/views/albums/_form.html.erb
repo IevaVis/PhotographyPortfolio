@@ -3,6 +3,7 @@
 		<%= simple_form_for @album, :html => { :multipart => true } do |f| %>
 			<%= f.input :title, label: "Title" %>
 			<%= f.input :body %>
+			<%= f.file_field :images, multiple: true %> 
 			<%= f.button :submit, class: "btn btn-info" %>
 		<% end %>
 	</div>
