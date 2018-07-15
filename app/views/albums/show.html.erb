@@ -1,18 +1,36 @@
 
+<h4 class="text-center album-title">
 <%= @album.title %>
+</h4>
+<div class="text-center album-body">
 <%= @album.body %>
+</div>
 
 
 	<!-- app/views/posts/show.html.erb -->
 <% if @album.images.attached? %>
-<p>
-  <strong>Images:</strong>
-  <br>
-  <% @album.images.each do |image| %>
-    <%= image_tag image.variant(resize: "300x300") %>
+<div class="card-columns">
+	<% @album.images.each do |image| %>
+  	<%= image_tag image.variant(resize: "250x250"), class: "card album-image" %>
   <% end %>
-</p>
 <% end %>
+</div>
+	
+
+</br>
+</br>
+
+
+<% if current_admin %>
+<%= link_to 'Edit album', edit_album_path(@album), class: "btn btn-secondary" %> 
+<% end %>
+<%= link_to 'Go Back To Albums', albums_path, class: "btn btn-info" %>
+
+<style>
+body {
+	background-color: #eeeeee
+}
+</style>
 
 
 

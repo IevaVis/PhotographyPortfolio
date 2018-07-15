@@ -1,6 +1,5 @@
 class Album < ApplicationRecord
-	has_many_attached :images
 	belongs_to :admin
+	has_many_attached :images
 	validates :title, :body, presence: true
-
 end

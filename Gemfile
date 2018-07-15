@@ -35,6 +35,7 @@ gem 'devise', '~> 4.4', '>= 4.4.3'
 
 #images
 gem "mini_magick"
+gem 'pgreset'
 
 
 # Reduces boot times through caching; required in config/boot.rb

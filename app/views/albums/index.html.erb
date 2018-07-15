@@ -1,0 +1,22 @@
+<div class="row" style="margin-top:40px">
+	<% @albums.each do |album| %>
+	<div class="col-md-4">
+		<div class="card">
+			<%= image_tag album.images.first, class: "card-img-top" %>
+				<div class="card-body">
+					<h5 class="card-title">
+						<%= album.title %>
+					</h5>
+					<p class="card-text">
+						<%= truncate(album.body, length: 80) %>
+					</p>
+					<a href="/albums/<%= album.id %>" class="d-flex flex-row-reverse p-2">
+      			<h6 class="link-to-photos">Daugiau nuotraukų<i class="fas fa-angle-double-right ml-2"></i></h6>
+    			</a>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+
