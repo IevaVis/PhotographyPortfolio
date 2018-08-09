@@ -10,17 +10,14 @@
 <% if @album.images.attached? %>
 	<div class="card-columns">
 		<% @album.images.each do |image| %>
-
-		<%= link_to image_tag image do %>
-
+		  <%= link_to image, 'data-lightbox': 'image' do %>
   			<%= image_tag image, class: "card album-image gallery-item" %>
+  		<% end %>
+  		<%= link_to "Remove", delete_image_attachment_album_url(image), method: :delete, data: {confirm: "Are you sure?"} if current_admin %>
+  <% end %>
+  </div>
+<% end %>
 
-  			<% end %>
-
-  			<%= link_to "Remove", delete_image_attachment_album_url(image), method: :delete, data: {confirm: "Are you sure?"} if current_admin %>
-  	<% end %>
-	<% end %>
-</div>
 
 </br>
 </br>
@@ -34,17 +31,6 @@
 <%= link_to 'Go Back To Albums', albums_path, class: "btn btn-info" %>
 
 
-<div class = "lightbox">
-	<div class = "lightbox-content">
-		<div class = "lightbox-controls">
-			<a href="#" class="lightbox-close">Close</a>
-			<a href="#" class="lightbox-prev"> < </a>
-			<a href="#" class="lightbox-next"> > </a>
-		</div>
-
-		<div class = "lightbox-image"></div>
-	</div>
-</div>
 
 <style>
 body {

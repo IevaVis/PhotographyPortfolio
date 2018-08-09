@@ -12,15 +12,49 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require jquery
 //= require popper
 //= require bootstrap
 //= require_tree .
 
 
+/*
+$(document).on('turbolinks:load', function() {
+		$(".lightbox").hide();
+	});
+
+$(document).on('turbolinks:load', function() {
+ 	$(".lightbox-close").click(function(event){
+ 		event.preventDefault();
+    $(".lightbox").hide();
+  });
+});
 
 
+$(".gallery-item").click(function(event) {
+	$(".lightbox").show();
+	event.preventDefault();
+
+	$(".lightbox-image").html(event.target);
+
+	// 	$(event.target).attr("height","600");
+	// 	$(event.target).attr("width", "500")
+
+});
+
+
+
+// for(i = 0; i < $(".gallery-item").length; i++) {
+//   let item = $(".gallery-item")[i];
+//   item.onclick = function(event) {
+//   	$(".lightbox").show();
+//   	$(".lightbox-image").html($(event.currentTarget));```
+
+//   }
+// }
+
+
+*/
 
 
 
