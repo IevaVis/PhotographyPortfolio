@@ -11,22 +11,18 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
 
-
-   
   </head>
 
   <body>
 
- <%= render 'shared/navigation' %>
- <%= render 'shared/alerts' %>
+    <%= render 'shared/navigation' %>
+    <%= render 'shared/alerts' %>
 
-<div class="container">
-<%= yield %>
-</div>
+  <div class="container">
+    <%= yield %>
+  </div>
 
-<%= render 'shared/footer' %>
-
-
+    <%= render 'shared/footer' %>
 
   </body>
 </html>
