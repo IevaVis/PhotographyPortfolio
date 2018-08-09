@@ -48,6 +48,12 @@ class AlbumsController < ApplicationController
 		end 
 	end
 
+	def delete_image_attachment
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
+    redirect_back(fallback_location: @album_path)
+  end
+
 	private
 	def valid_params
 		params.require(:album).permit(:title, :body, images: [])

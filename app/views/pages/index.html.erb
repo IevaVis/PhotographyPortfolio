@@ -6,41 +6,23 @@
 	</div>
 </div>
 
-<div class="row albums">
+<div class="row" style="margin-top:40px">
+  <% @albums.each do |album| %>
   <div class="col-md-4">
     <div class="card">
-  <img class="card-img-top" src="/assets/Design2.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><strong>Butas Antakalnyje</strong></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#!" class="d-flex flex-row-reverse p-2">
-      <h6 class="link-to-photos">Daugiau nuotraukų<i class="fas fa-angle-double-right ml-2"></i></h6>
-    </a>
-  </div>
-</div>
-  </div>
-  <div class="col-md-4">
-    <div class="card">
-  <img class="card-img-top" src="/assets/Design2.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><strong>Kotedžas Riešėje</strong></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#!" class="d-flex flex-row-reverse p-2">
-      <h6 class="link-to-photos">Daugiau nuotraukų<i class="fas fa-angle-double-right ml-2"></i></h6>
-    </a>
-  </div>
-</div>
-  </div>
-  <div class="col-md-4">
-    <div class="card">
-  <img class="card-img-top" src="/assets/Design2.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><strong>Sodyba</strong></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#!" class="d-flex flex-row-reverse p-2">
-      <h6 class="link-to-photos">Daugiau nuotraukų<i class="fas fa-angle-double-right ml-2"></i></h6>
-    </a>
-  </div>
-</div>
-  </div>
+      <%= image_tag album.images.first, class: "card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= album.title %>
+          </h5>
+          <p class="card-text">
+            <%= truncate(album.body, length: 80) %>
+          </p>
+          <a href="/albums/<%= album.id %>" class="d-flex flex-row-reverse p-2">
+            <h6 class="link-to-photos">Daugiau nuotraukų<i class="fas fa-angle-double-right ml-2"></i></h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

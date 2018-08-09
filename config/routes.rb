@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   match '/contacts',     to: 'contacts#new', via: 'get'
 	resources "contacts", only: [:new, :create]
-	resources :albums
-  
+	
+	resources :albums do
+		member do
+			delete :delete_image_attachment
+		end
+	end
 end
