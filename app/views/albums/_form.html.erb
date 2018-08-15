@@ -3,6 +3,7 @@
 <div class="row album-form">
 	<div class="col-md-8 offset-md-2">
 		<%= simple_form_for @album, :html => { :multipart => true } do |f| %>
+			<%= select_tag(:portfolio_id, options_for_select(@portfolios), :prompt => "Choose a category") %> 
 			<%= f.input :title, label: "Title" %>
 			<%= f.input :body %>
 			<%= f.file_field :images, multiple: true %> 

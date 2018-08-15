@@ -7,15 +7,16 @@ class AlbumsController < ApplicationController
 
 	def new
 		@album = Album.new
+		@portfolios = Portfolio.all.map { |p| [p.name, p.id] }
 	end
 
 	def create
 		@album = current_admin.albums.new(valid_params)
+		@album.portfolio_id = params[:portfolio_id]
 		if @album.save
 			redirect_to album_path(@album)
 			flash[:notice] = "Album is created successfully!"
 		else
-			flash[:alert] = "Error creating album"
 			render :new
 		end
 	end
@@ -56,7 +57,7 @@ class AlbumsController < ApplicationController
 
 	private
 	def valid_params
-		params.require(:album).permit(:title, :body, images: [])
+		params.require(:album).permit(:title, :body, :portfolio_id, images: [])
 	end
 
 	def require_login
