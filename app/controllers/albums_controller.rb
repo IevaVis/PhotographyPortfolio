@@ -1,8 +1,15 @@
 class AlbumsController < ApplicationController
+	before_action :set_album, only: [:show, :edit, :update, :destroy]
 	before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+	
 
 	def index
-		@albums = Album.all
+		if params[:portfolio].blank?
+			@albums = Album.all.order("created_at DESC")
+		else
+			@portfolio_id = Portfolio.find_by(name: params[:portfolio]).id
+			@albums = Album.where(:portfolio_id => @portfolio_id).order("created_at DESC")
+		end
 	end
 
 	def new
@@ -22,15 +29,14 @@ class AlbumsController < ApplicationController
 	end
 
 	def show
-		@album = Album.find(params[:id])
 	end
 
 	def edit
-		@album = Album.find(params[:id])
+		@portfolios = Portfolio.all.map { |p| [p.name, p.id] }
 	end
 
 	def update
-		@album = Album.find(params[:id])
+		@album.portfolio_id = params[:portfolio_id]
 		if @album.update_attributes(valid_params)
 			redirect_to album_path(@album)
 			flash[:notice] = "Album updated successfully"
@@ -41,7 +47,6 @@ class AlbumsController < ApplicationController
 	end
 
 	def destroy
-		@album = Album.find(params[:id])
 		@album.destroy
 		respond_to do |format|
 			format.html { redirect_to root_path }
@@ -67,5 +72,10 @@ class AlbumsController < ApplicationController
 		end
 	end
 
+		def set_album
+			@album = Album.find(params[:id])
+		end
 
-end
+	end
+
+

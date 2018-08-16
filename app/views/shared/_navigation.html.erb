@@ -11,26 +11,27 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Albumai
+          Portfolio
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Butai</a>
-          <a class="dropdown-item" href="#">Namai</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Kiti objektai</a>
+          <% Portfolio.all.each do |portfolio| %>
+           <%= link_to portfolio.name, albums_path(portfolio: portfolio.name), class: "dropdown-item" %>  
+          <% end %>
         </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/contacts">Kontaktai</a>
       </li>
-    <% if admin_signed_in? %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">   
+    <% if admin_signed_in? %> 
       <li class="nav-item">
-         <a><%= link_to "Sign Out", destroy_admin_session_path, method: :delete , class: 'nav-link' %></a>
+         <%= link_to "Sign Out", destroy_admin_session_path, method: :delete , class: 'nav-link' %>
+       </li>
       <li class="nav-item">
         <a class="nav-link" href="/albums/new">Naujas Albumas</a>
       </li>
          <% end %>
-      </li>
-    </ul>
+       </ul>
   </div>
 </nav>
